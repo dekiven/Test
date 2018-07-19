@@ -1,0 +1,12 @@
+Library/
+Temp/
+UnityPackageManager/
+StreamingAssets
+StreamingAssets.meta
+AssetBundles
+Assets/Lua
+Assets/Lua.meta
+.vs/
+Generate
+*.csproj
+*.sln
