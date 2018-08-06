@@ -28,7 +28,7 @@ namespace GameFramework
             UnityEngine.Object prefab = PrefabUtility.GetPrefabParent(obj);
             if (null != prefab)
             {
-                PrefabUtility.ReplacePrefab(PrefabUtility.FindPrefabRoot(obj), prefab, ReplacePrefabOptions.ReplaceNameBased);
+                PrefabUtility.ReplacePrefab(PrefabUtility.FindPrefabRoot(obj), prefab, ReplacePrefabOptions.ConnectToPrefab);
                 return true;
             }
             return false;
