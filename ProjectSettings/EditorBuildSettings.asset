@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/TestC++Plugins/Scenes/main.unity
     guid: 86f2c6f8e88db45b387f40ecb6cc71bc
-  - enabled: 1
+  - enabled: 0
     path: Assets/TestTouch/TestTouch.unity
     guid: a628b51d32b544971a3338fc7c8665d3
+  - enabled: 1
+    path: Assets/TestPlatformPlugin/Scene.unity
+    guid: 850016846eac0422cb2726f23fdaf521
