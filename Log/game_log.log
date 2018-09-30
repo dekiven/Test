@@ -1,0 +1,33 @@
+2018-09-30 09:56:23:8911 [log] ---> Start...
+Log-->TakePhoto
+trace:UnityEngine.Debug:Log(Object)
+GameFramework.LogFile:Log(String) (at Assets/LogFile.cs:46)
+GameFramework.PlatformEditor:TakePhoto() (at Assets/TestPlatformPlugin/PlatformEditor.cs:19)
+GameFramework.Platform:TakePhoto() (at Assets/TestPlatformPlugin/Platform.cs:17)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-30 09:56:27:1371 [log] ---> TakePhoto
+Log-->TakePhoto 1 
+trace:UnityEngine.Debug:Log(Object)
+GameFramework.LogFile:Log(String) (at Assets/LogFile.cs:46)
+GameFramework.PlatformEditor:TakePhoto() (at Assets/TestPlatformPlugin/PlatformEditor.cs:22)
+GameFramework.Platform:TakePhoto() (at Assets/TestPlatformPlugin/Platform.cs:17)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-30 09:56:27:1379 [log] ---> TakePhoto 1 
+Log-->TakeAlbum
+trace:UnityEngine.Debug:Log(Object)
+GameFramework.LogFile:Log(String) (at Assets/LogFile.cs:46)
+GameFramework.PlatformEditor:TakeAlbum() (at Assets/TestPlatformPlugin/PlatformEditor.cs:9)
+GameFramework.Platform:TakeAlbum() (at Assets/TestPlatformPlugin/Platform.cs:25)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-30 09:56:29:1190 [log] ---> TakeAlbum
+Log-->TakeAlbum 1 
+trace:UnityEngine.Debug:Log(Object)
+GameFramework.LogFile:Log(String) (at Assets/LogFile.cs:46)
+GameFramework.PlatformEditor:TakeAlbum() (at Assets/TestPlatformPlugin/PlatformEditor.cs:12)
+GameFramework.Platform:TakeAlbum() (at Assets/TestPlatformPlugin/Platform.cs:25)
+UnityEngine.EventSystems.EventSystem:Update()
+
+2018-09-30 09:56:29:1201 [log] ---> TakeAlbum 1 

@@ -1,0 +1,20 @@
+1. C/C++ 跨平台（native）插件开发：
+    a.见Test/TestC++Plugins项目
+
+
+
+2.android平台插件开发：
+    参考：https://github.com/eppz/Unity.Blog.Unity_Android_plugin_tutorial/
+
+3.IOS平台插件开发：
+    参考：https://github.com/eppz/Unity.Blog.Unity_Android_plugin_tutorial/
+    
+    使用c/oc混编技术（.mm)
+    可以将代码直接放到Plugins/iOS下
+    可以将代码打包到.a库代替使用代码,编译打包见1,回调通知Unity需要声明一下方法：
+        extern void UnitySendMessage(const char *, const char *, const char *); 
+    打包.a的示例见GameFrameworkIOSPlugin.zip
+
+
+
+

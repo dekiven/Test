@@ -1,8 +1,10 @@
 ﻿// Unity调用ios的相机相册
 // https://blog.csdn.net/kangying3769/article/details/80369341
 
+using System;
 using System.Collections;
 using System.Runtime.InteropServices;
+using GameFramework;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -20,21 +22,43 @@ public class OpenCameraOrAlbum : MonoBehaviour
     //[DllImport("__Internal")]
     //private static extern void IOS_OpenAlbum();
 
-    [DllImport("__Internal")]
-    private static extern void GFTakePhoto();
-
-    [DllImport("__Internal")]
-    private static extern void GFTakeAlbum();
-
     void Awake()
     {
+
+        if (
+            RuntimePlatform.WindowsPlayer == Application.platform
+            || RuntimePlatform.WindowsEditor == Application.platform
+            || RuntimePlatform.OSXEditor == Application.platform
+        )
+        {
+            LogFile.Init(Application.dataPath + "/../Log/game_log.log");
+        }
+        else
+        {
+            LogFile.Init(Application.persistentDataPath+"/Log/game_log.log");
+        }
+        LogFile.Log("Start...");
+        Application.logMessageReceived += handleLogCallback;
         //为两个button添加点击事件
         //_openCamera.onClick.AddListener(IOS_OpenCamera);
         //_openAlbum.onClick.AddListener(IOS_OpenAlbum);
+#if UNITY_EDITOR
+        Platform.SetPlatformInstance(new PlatformEditor());
+#elif UNITY_IOS
+        Platform.SetPlatformInstance(new PlatformIOS());
+#elif UNITY_ANDROID
+        Platform.SetPlatformInstance(new PlatformAnd());
+#endif
 
-        _openCamera1.onClick.AddListener(GFTakePhoto);
-        _openAlbum1.onClick.AddListener(GFTakeAlbum);
+        _openCamera1.onClick.AddListener(Platform.TakePhoto);
+        _openAlbum1.onClick.AddListener(Platform.TakeAlbum);
     }
+
+    private void handleLogCallback(string condition, string stackTrace, LogType type)
+    {
+        LogFile.WriteLine(type + "-->" + condition + "\ntrace:" + stackTrace);
+    }
+
     //ios回调unity的函数
     void Message(string filenName)
     {

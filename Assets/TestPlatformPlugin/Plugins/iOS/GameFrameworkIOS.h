@@ -8,6 +8,9 @@
 #ifndef __GameFrameworkIOS_h__
 #define __GameFrameworkIOS_h__
 
+
+extern void UnitySendMessage(const char *, const char *, const char *);
+
 #if defined(__cplusplus)
 extern "C" {
 #endif
